@@ -1,0 +1,209 @@
+@import "variables";
+
+html {
+    width: 100%;
+    background-color: $backgroundColor;
+    font-family: $font;
+    font-weight: $lightFont;
+}
+
+input {
+    background-color: transparent;
+    border-radius: 7px;
+    border: 3px solid $gradientDark;
+    padding: .5rem;
+    margin: 1rem;
+    width: 75%;
+    transition: .3s;
+    &:focus {
+        border-color: $ctaColor;
+    }
+}
+
+.login {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: hidden;
+    background-image: url(../img/login-background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        opacity: .6;
+
+    }
+
+    #loginForm {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        margin: auto;
+        padding: 2rem;
+        min-width: 35%;
+        background: $neoUpGradient;
+        z-index: 3;
+        border-radius: 7px;
+        //background-color: $backgroundColor;
+        input {
+            //padding: .5rem;
+            //margin: 1rem;
+            //width: 75%;
+            //border-radius: 7px;
+
+        }
+    }
+}
+h1,h2, h3, h4, h5, h6 {
+    margin: 1rem;
+    font-weight: $heavyFont !important;
+}
+h1 {
+    font-size: 1.5rem;
+}
+.card {
+    padding: .2rem;
+    width: 11rem;
+    height: 11rem;
+    max-width: 300px;
+    max-height: 300px;
+    position: relative;
+    margin: 1rem auto;
+    //display: block;
+    background: $neoUpGradient;
+    border-radius: 7px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.big-card {
+    padding: .5rem;
+    margin: 1rem auto;
+    max-width: 400px;
+    position: relative;
+    background: $neoUpGradient;
+    border-radius: 7px;
+    text-align: center;
+}
+
+.neo-up {
+    box-shadow: $neoUpShadow;
+}
+.neo-down {
+    box-shadow: $neoDownShadow;
+}
+.bubble {
+    border-radius: 10px;
+    position: relative;
+    padding: 1rem;
+   /* input {
+        border: none;
+        background-color: transparent;
+        position: absolute;
+        width: 90%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }*/
+}
+.bubble-active {
+    background-color: $neoUpGradient;
+}
+.bubble-inactive {
+    opacity: .6;
+}
+
+.cardHolder {
+   display: flex;
+   flex-flow: row wrap;
+   justify-content: space-around;
+   .card{
+       margin: 1rem;
+   }
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: $backgroundColor;
+    z-index: 1;
+    box-shadow: $boxShadow;
+
+    .primary {
+        margin: .75rem;
+    }
+}
+.modal-wrapper {
+    .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        margin: auto;
+        //padding: 2rem;
+        min-width: 85%;
+        max-height: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        background: $neoUpGradient;
+        z-index: 3;
+        border-radius: 7px;
+        //background-color: $backgroundColor;
+        input {
+
+        }
+        .modalBody {
+            padding: 2rem;
+        }
+        .modalFooter {
+            background-color: $gradientDark;
+            width: 100%;
+            position: sticky;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+    .modal-bg {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: $textColor;
+        opacity: .8;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+    .callback-message {
+        color: $ctaColor;
+    }
+}
+
+.specificClientName{
+    margin: auto;
+}
+
+.phaseButton {
+    width: 100% !important;
+}
+
