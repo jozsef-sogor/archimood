@@ -28,10 +28,7 @@ nav{
         text-decoration: none;
         color: $textColor;
         transition: .3s;
-        &:hover {
-            background-color: rgba(0,0,0,0.2);
-            text-decoration: underline;
-        }
+
     }
     .router-link-active {
         text-decoration: underline !important;
@@ -46,10 +43,35 @@ nav{
             position: absolute;
             top: -2px;
             height: 5px;
-            left: 0;
+            right: 0;
             width: 100%;
             transition: .3s;
             background-color: $ctaColor;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    nav {
+        justify-content: flex-start;
+
+        a{
+            padding: 1.5rem .25rem;
+            width: 100%;
+            margin: 2rem auto 0;
+            text-align: center;
+            &:hover {
+            background-color: rgba(0,0,0,0.2);
+            text-decoration: underline;
+        }
+        }
+        .router-link-active {
+            &::after {
+                height: 100%;
+                width: 5px;
+                top: 0;
+                right: -2px;
+            }
         }
     }
 }

@@ -8,10 +8,10 @@ import store from './store'
 
 // firebase init goes here
 const config = {
-    apiKey: process.env.VUE_APP_apiKey,
+    apiKey: "AIzaSyAwl1kaqGItRqbHIpdDc_k9kPHpdQHDqSQ",
     authDomain: process.env.VUE_APP_authDomain,
     databaseURL: process.env.VUE_APP_databaseURL,
-    projectId: process.env.VUE_APP_projectId,
+    projectId: "archimood-c4cc2",
     storageBucket: process.env.VUE_APP_storageBucket,
     messagingSenderId: process.env.VUE_APP_FmessagingSenderId,
     appId: process.env.VUE_APP_appId,

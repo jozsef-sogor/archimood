@@ -1,6 +1,8 @@
 <template>
   <div class="login">
          <form @submit.prevent="login" id="loginForm">
+            <img id="loginImage" src="../assets/img/archimood-logo.png" alt="Archimood">
+            <p class="error neo-down" v-bind="error" v-show="error"> {{error}}</p>
             <input type="email" placeholder="Email" v-model="email" /><br>
             <input type="password" placeholder="Password" v-model="password" /><br>
             <mainButton :primaryButton='true' :onClick='login'>Login</mainButton>
@@ -26,7 +28,7 @@ export default {
     return {
       email: '',
       password: '',
-      errorMessage: '',
+      error: '',
       loginUid: this.computedUid,
       loginUserObj: this.computedUserObj
     }
@@ -40,7 +42,7 @@ export default {
     }
   },
   mounted: function(){
-    window.alert('Email: admin@gmail.com, password: admin123')
+    window.alert('Email: verakovacs@notreal.com, password: 123456 or create a user from admin page')
   },
   methods: {
     testFunction: function() {
@@ -67,7 +69,8 @@ export default {
 
     )
     .catch(err => {
-        console.log(err)
+        this.error = err.message;
+        console.log(err);
     })
 
 
@@ -136,7 +139,16 @@ export default {
 };
 </script>
 <style lang="scss">
-  .login {
-    
+  #loginForm {
+    position:relative
+  }
+  #loginImage {
+      filter: invert(1);
+      max-width: 100%;
+      margin: auto;   
+  }
+  .error {
+    color: red;
+    font-weight: 600;
   }
 </style>

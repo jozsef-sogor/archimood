@@ -31,4 +31,17 @@ export default {
   .wrapper {
     margin-bottom: 5rem;
   }
+
+  @media screen and (min-width: 1024px) {
+    nav {
+      width: auto;
+      max-width: 75px;
+      height: 100%;
+      flex-direction: column;
+    }
+    .wrapper {
+      margin-bottom: auto;
+      margin-left: 75px;
+    }
+}
 </style>

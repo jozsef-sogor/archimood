@@ -20,23 +20,16 @@
 
         <div class="projectView">
             <div v-for="(phase, phaseIndex) of selectedProject.projectPhases" :key="phaseIndex" :class="phase.isDone ? 'neo-up bubble projectPhase' : 'neo-down bubble projectPhase'">
-                    <h3>{{phase.phaseName}}</h3>
-                    <input class="phaseName" type="text" placeholder="Phase name" v-model="phase.phaseName"><br>
-                    <input class="phasePrice" type="number" placeholder="Phase price" v-model="phase.phasePrice"> HUF<br>
-
-                    <button class="secondary removePhase" @click="removePhase(phaseIndex)">Remove phase</button>
-
-                    <div v-for="(step, index) of phase.steps" :key="index" :class="step.isDone ? 'neo-up bubble projectStep' : 'neo-down bubble projectStep'">
-                        <input class="stepName" type="text" placeholder="Step name" v-model="step.stepName"><br>
-   
-                        <button class="secondary removeStep" @click="removeStep(phaseIndex, index)">Remove step</button>
-
+                    <div class="phaseHeader" :class="phase.isDone ? 'neo-up bubble pheaseHeader' : 'neo-down bubble phaseHeader'">
+                        <h3 class="phaseName bubble">{{phase.phaseName}}</h3>
+                        <p class="phasePrice bubble"> {{phase.phasePrice}}HUF </p>
                     </div>
-                    <button class="primary stepButton" @click='addStep(index)'>Add step</button>
 
-                    <!-- <input class="phaseName" type="text" placeholder="Phase name" v-model="newProject[index]"><br>
-                    <input class="phaseStep" type="text" placeholder="Phase step" v-model="newProject[index].value"><br> -->
-                </div>
+                    <p v-for="(step, index) of phase.steps" :key="index" :class="step.isDone ? 'neo-up bubble projectStep' : 'neo-down bubble projectStep'">
+                        {{step.stepName}}
+                    </p>
+
+             </div>
         </div>
 
       </section>
@@ -69,22 +62,6 @@ export default {
     },
     methods: {
 
-        removePhase: function(phaseIndex) {
-            this.selectedProject.projectPhases.splice(phaseIndex, 1)
-        },
-        addStep: function(index) {
-            const step = {
-                stepName: '',
-                file: '',
-                isDownloadable: false,
-                isDone: false,
-            };
-            this.selectedProject.projectPhases[index].steps.push(step)
-        },
-        removeStep: function(phaseIndex, index){
-            //let step = this.newProject[phaseIndex].steps[index];
-            this.selectedProject.projectPhases[phaseIndex].steps.splice(index, 1);
-        },
 }
 }
 </script>
@@ -93,6 +70,7 @@ export default {
 @import "../assets/css/variables.scss";
 
 .projectView {
+    max-width: 700px;
     text-align: center;
     .projectPhase {
         margin: 2rem auto 3rem;
@@ -102,33 +80,34 @@ export default {
         .projectStep {
             width: 75%;
             margin: 1rem auto;
-            .stepOptions {
-                display: flex;
-                justify-content: space-around;
-                align-items: center;
-                padding: .5rem;
-                label {
-                    font-size: .75rem;
-                    display: block;
-                    margin: auto;
-                }
-                input {
-                    margin: .5rem auto;
-                    padding: .25rem;
-                    width: 75%;
-                    margin: 0 !important;
-                    background-color: transparent;
-                    color: $ctaColor;
-                }
+        }
+        .phaseHeader {  
+            box-shadow: none;
+            .phaseName {
+                padding-bottom: 0;
             }
-        }
-
-        .phaseButton {
-            width: 100% !important;
-        }
-        .stepButton {
-            width: 75%;
+            .phasePrice {
+                padding-top: 0;
+            }
         }
     }
 }
+
+  @media screen and (min-width: 1024px) {
+      .projectView{
+        max-width: 1080px;
+        .projectPhase {
+            position: relative;
+            margin-left: 150px !important;
+            .phaseHeader {
+            float: left;
+            transform: rotate(-90deg) translateY(-50%);
+            //width: 100%;
+            min-height: 60px;
+            padding: 0 1rem !important;
+            margin-left: -110px;
+        }
+        }
+      }
+  }
 </style>

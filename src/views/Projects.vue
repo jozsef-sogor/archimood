@@ -5,7 +5,7 @@
       </div>
       
 
-      <section id="projects" v-if="projects != undefined">
+      <section id="projects" v-if="projects != undefined" class="cardHolder">
           <div class="card neo-up" v-for="(project, index) of projects" :key=index>
               <h2>{{ project.projectName }}</h2>
           <button class="primary" @click='$router.push(`/project/${project.projectId}`)'>Open project</button>
