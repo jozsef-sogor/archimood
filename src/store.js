@@ -35,6 +35,9 @@ export const store = new Vuex.Store({
         getProjects(state) {
             return state.projects
         },
+        getToken(state) {
+            return state.currentUser.data.notificationToken
+        }
     },
 
     mutations: {

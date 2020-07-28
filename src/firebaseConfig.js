@@ -13,7 +13,7 @@ const config = {
     databaseURL: process.env.VUE_APP_databaseURL,
     projectId: "archimood-c4cc2",
     storageBucket: process.env.VUE_APP_storageBucket,
-    messagingSenderId: process.env.VUE_APP_FmessagingSenderId,
+    messagingSenderId: process.env.VUE_APP_messagingSenderId,
     appId: process.env.VUE_APP_appId,
     measurementId: process.env.VUE_APP_measurementId
 };
@@ -23,6 +23,7 @@ firebase.initializeApp(config)
 const db = firebase.firestore()
 const auth = firebase.auth()
 const storage = firebase.storage()
+const messaging = firebase.messaging()
 const currentUser = auth.currentUser
 
 // date issue fix according to firebase
@@ -120,6 +121,7 @@ export {
     db,
     auth,
     storage,
+    messaging,
     functions,
     currentUser,
     usersCollection,

@@ -140,7 +140,10 @@ export default {
 </script>
 <style lang="scss">
   #loginForm {
-    position:relative
+    position:relative;
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
   }
   #loginImage {
       filter: invert(1);

@@ -12,9 +12,9 @@ let app
 fb.auth.onAuthStateChanged(user => {
   console.log('user from main.js: ', user);
   store.dispatch('setCurrentUser', user);
-  store.dispatch('patchUid', user.uid);
+  store.dispatch('patchUid', user.uid).then(() =>   fb.functions.initialFetch())
   store.dispatch('fetchUserProfile');
-  fb.functions.initialFetch();
+  router.push('/project');
     if (!app) {
         app = new Vue({
             el: '#app',

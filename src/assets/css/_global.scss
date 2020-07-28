@@ -143,6 +143,7 @@ h1 {
 }
 
 .title {
+    //padding: 1rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -207,6 +208,7 @@ h1 {
 
 .specificClientName{
     margin: auto;
+    padding: 1.1rem;
 }
 
 .phaseButton {

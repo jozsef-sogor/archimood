@@ -41,7 +41,7 @@ export default {
     }
     .wrapper {
       margin-bottom: auto;
-      margin-left: 75px;
+      margin-left: 100px;
     }
 }
 </style>
